@@ -8,9 +8,9 @@ pipeline {
                 script {
                     ResultCode = sh(
                         returnStatus: true,
-                          script: {
+                        script: {
                               "./test.sh"
-                          }
+                        }
                     )
                     currentBuild.result = "SUCCESS"
                 }   
