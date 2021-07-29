@@ -8,7 +8,7 @@ pipeline {
                 script {
                     ResultCode = sh (
                         returnStatus: true,
-                        script: "./test.sh"
+                        script: "node -versio"
                     )
                     currentBuild.result = "SUCCESS"
                     if ( ResultCode == 1 ) {
