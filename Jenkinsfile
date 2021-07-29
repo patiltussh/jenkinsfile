@@ -6,11 +6,9 @@ pipeline {
         stage('Test') {
             steps {
                 script {
-                    ResultCode = sh(
+                    ResultCode = sh (
                         returnStatus: true,
-                        script: {
-                              "node --version"
-                        }
+                        script: "node --version"
                     )
                     currentBuild.result = "SUCCESS"
                 }   
