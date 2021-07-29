@@ -5,8 +5,22 @@ pipeline {
     stages {
         stage('Test') {
             steps {
-                sh 'ls'
-            }
+                script {
+                    ResultCode = sh(
+                        returnStatus: true,
+                          script: {
+                              "./test.sh"
+                          }
+                    )
+                    currentBuild.result = "SUCCESS"
+                }   
+                script {
+                  if ( ResultCode == 1 ) {
+                    echo "ERROR: plan failed"
+                    exit 1
+                  }
+              } // script {}
+           }
         }
     }
 }
