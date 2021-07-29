@@ -9,7 +9,7 @@ pipeline {
                     ResultCode = sh(
                         returnStatus: true,
                         script: {
-                              "./test.sh"
+                              "node --version"
                         }
                     )
                     currentBuild.result = "SUCCESS"
